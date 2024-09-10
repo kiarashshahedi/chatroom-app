@@ -1,18 +1,19 @@
-version: '3'
-services:
-  mongodb:
-    image: mongo
-    container_name: mongodb
-    ports:
-      - "27017:27017"
-    volumes:
-      - ./data/db:/data/db
+version: '3.8'
 
-  fastapi:
-    build: ./backend
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Ensure this matches the filename and path
+    volumes:
+      - ./backend:/app/backend
     ports:
       - "8000:8000"
     depends_on:
       - mongodb
-    volumes:
-      - ./backend/app:/app
+
+  mongodb:
+    image: mongo
+    container_name: messenger-app-mongodb
+    ports:
+      - "27017:27017"

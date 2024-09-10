@@ -1,6 +1,0 @@
-fastapi
-pymongo
-python-socketio[client]
-python-jose[cryptography]
-uvicorn
-python-dotenv

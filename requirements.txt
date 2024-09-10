@@ -1,0 +1,7 @@
+fastapi
+pymongo
+python-socketio
+python-jose
+uvicorn
+python-dotenv
+python-multipart
